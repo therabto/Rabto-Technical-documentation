@@ -1,0 +1,3 @@
+-we use gilroy , Montserrat ,VVDS Fifties ,Roboto and Poppins Fonts
+-Gilroy , Montserrat ,VVDS Fifties font are avalable in Fonts Folder
+-Poppins and Raboto Are used Using CDN Link . import in (public/index.html)

@@ -1,0 +1,428 @@
+Basically the Components folder Contain all Event files
+Components :
+    - Hompage 
+    - Bookmark 
+    - Entry 
+    - Loading 
+    - PageNotFound 
+    - QRScanner ( Not in use )
+    - Stall 
+    - Visitorprofile ( Not in use )
+
+--------------Bookmark Components started-----------------
+Bookmark Components : 
+Module Name: Index
+
+Purpose:
+The Index component is responsible for displaying bookmarked stalls for visitors at an event. It allows visitors to view and navigate to bookmarked stalls.
+
+Dependencies:
+ -React: A JavaScript library for building user interfaces.
+ -react-icons: Provides a collection of icons for use in React applications.
+ -react-router-dom: Allows for navigation within a React application.
+ -APIs: Contains functions for making API calls to fetch stall and visitor data.
+
+State Variables:
+-isSearch: Boolean flag indicating whether the search feature is enabled.
+-query: String representing the search query entered by the user.
+-isScanOpen: Boolean flag indicating whether the scanning feature is open.
+-isAlert: Boolean flag indicating whether alerts are displayed.
+-facingMode: String representing the camera facing mode (e.g., 'rear').
+-stalls: Array of objects representing stalls available at the event.
+-visitorEventData: Object containing data related to the visitor's event.
+
+Hooks:
+-useEffect: Hook used for fetching data when the component mounts.
+-useState: Hook used for managing component state.
+
+Functions:
+-getStallsForEvents: Fetches stalls associated with the current event from the API.
+-getVisitorDetailsHandler: Fetches visitor details for the current event from the API.
+
+Rendering:
+The component renders a fragment containing:
+-A navigation link back to the dashboard.
+-A title indicating "Bookmarks".
+-A list of bookmarked stalls, with each item containing:
+  -Stall name.
+  -Stall number.
+  -Category image.
+
+Export:
+The component is exported as the default export.
+
+--------------Bookmark Components End-----------------
+
+
+
+------------------Entry Folder Start ---------------------
+
+Component: Login
+
+Purpose:
+The Login component manages the authentication process for visitors. It consists of two steps: Step 1 collects basic visitor details, and Step 2 completes the authentication process.
+
+Dependencies:
+-React: A JavaScript library for building user interfaces.
+-Stepone: Component responsible for collecting visitor details in Step 1.
+-GoogleOAuthProvider: Provides authentication services using Google OAuth.
+-Steptwo: Component for completing the authentication process in Step 2.
+-Cookies: Library for handling browser cookies.
+-useNavigate: Hook for navigation within a React application.
+-APIs: Contains functions for making API calls to handle user authentication and registration.
+
+State Variables:
+-step: Object representing the current step in the authentication process and its status.
+-visitorDetails: Object containing visitor details collected during the authentication process.
+
+Hooks:
+-useEffect: Hook used to trigger actions based on component lifecycle events.
+-useState: Hook for managing component state.
+
+Functions:
+-HandleStep1: Function to handle Step 1 of the authentication process.
+-HandleStep2: Function to handle Step 2 of the authentication process.
+-createRandomUsername: Function to generate a unique username based on the visitor's display name.
+-AuthHandler: Function to handle authentication and redirect after successful login.
+
+Rendering:
+-The component renders a fragment containing:
+-Stepone component for collecting visitor details in Step 1.
+-Steptwo component for completing the authentication process in Step 2.
+
+-----
+Component: GoogleLogins
+
+Purpose:
+The GoogleLogins component provides Google OAuth authentication functionality for visitors. It allows visitors to sign in using their Google accounts.
+
+Dependencies:
+-React: A JavaScript library for building user interfaces.
+-BsGoogle: Icon component from react-icons library.
+-GoogleOAuthProvider: Provides authentication services using Google OAuth.
+-GoogleLogin: Component for Google OAuth login functionality.
+-jwtDecode: Library for decoding JSON Web Tokens (JWTs).
+-Firebase: Firebase authentication service.
+-Cookies: Library for handling browser cookies.
+-useNavigate: Hook for navigation within a React application.
+-APIs: Contains functions for making API calls to handle user authentication and registration.
+
+Functions:
+-responseGoogle: Function to handle the response from Google OAuth login.
+-createRandomUsername: Function to generate a unique username based on the visitor's display name.
+
+Rendering:
+The component renders a Google OAuth login button.
+
+
+-----
+Component: Stepone
+
+Purpose:
+The Stepone component collects basic visitor details during Step 1 of the authentication process.
+
+
+Dependencies:
+-React: A JavaScript library for building user interfaces.
+-TieABrand: Image component for displaying a brand logo.
+-Minilogo: Image component for displaying a mini logo.
+-GoogleOAuthProvider: Provides authentication services using Google OAuth.
+-GoogleLogins: Component for Google OAuth login functionality.
+-Loading: Component for displaying a loading indicator.
+
+State Variables:
+isLoading: Boolean flag indicating whether the component is in a loading state.
+
+Functions:
+IsLoadingHandler: Function to handle the loading state of the component.
+
+Rendering:
+The component renders a form for collecting visitor details, including fields for email, name, and company name. It also displays branding images and a Google OAuth login button.
+
+-----
+Component: Steptwo
+
+Purpose:
+The Steptwo component is responsible for collecting additional visitor details in the second step of the authentication process.
+
+Dependencies:
+-React: A JavaScript library for building user interfaces.
+-Torusknot: Image component for displaying a decorative image.
+-Minilogo: Image component for displaying a mini logo.
+
+State Variables:
+-companyName: String representing the company name entered by the visitor.
+-mobileNo: String representing the mobile number entered by the visitor.
+-error: String representing any validation error message.
+
+Functions:
+-validateMobileNumber: Function to validate the format of the mobile number entered by the visitor.
+-validateCompanyName: Function to validate the length of the company name entered by the visitor.
+-stepHandler: Function to handle the validation of visitor details and trigger the next step in the authentication process.
+
+Rendering:
+The component renders a form containing input fields for the company name and mobile number. It also displays a decorative image and a mini logo. If there are any validation errors, an error message is displayed above the input fields. Upon successful validation, a "Continue" button is rendered for the visitor to proceed to the next step.
+
+----------Entry Folder End --------------
+
+
+----------Homepage Start --------------
+
+Overview
+ The provided code consists of React components for a visitor interface in an event management system. It allows visitors to view stalls, search for specific stalls, and scan QR codes for interaction.
+
+ Components:
+
+ Index Component:
+  -This component serves as the main interface for visitors. 
+  -It displays recent visits, stalls categorized by recent visit order, and provides search functionality.
+  -The component utilizes various React hooks such as useState and useEffect for state management and lifecycle methods.
+
+ Search Component:
+  -The Search component is responsible for rendering search results based on the visitor's query.
+   -It includes sections for services, products, and a list of stalls, each rendered conditionally based on the user's selection.
+
+ Additional Components:
+  Several additional components are imported for functionality, including Swiper for carousel display, QR code scanner components, and custom loading indicators.
+
+ Functionality:
+
+  Stall Display:
+   -The Index component displays recent visits and a list of stalls.
+   -Recent visits are sorted based on the visitor's interaction history.
+   -Stalls are filtered and displayed based on the visitor's search query.
+   -Each stall entry includes stall details and a link to view more information.
+
+  QR Code Scanning:
+   -Visitors can activate the QR code scanning feature by clicking on the QR code scan icon.
+   -The component utilizes a QR code scanner library to enable scanning functionality.
+   -Scanning QR codes provides visitors with access to additional stall information or interactions.
+
+  User Interaction:
+   -The interface includes interactive elements such as search input fields, navigation buttons, and profile links.
+   -Visitors can click on stall entries to view more details, switch between camera views for QR code scanning, and close modal dialogs.
+
+ Data Handling:
+
+  State Management:
+  -State variables are managed using React's useState hook.
+  -The component fetches stall and visitor data from APIs using custom functions.
+  -State updates trigger re-renders to reflect changes in the UI.
+
+  Data Filtering and Sorting:
+  -Stall data is filtered based on the visitor's search query and recent visit history.
+  -Recent visits are sorted to prioritize stalls based on the visitor's interaction frequency.
+
+ Integration and Dependencies:
+
+  External Libraries:
+  -The code relies on several external libraries, including Swiper for carousel functionality, QR code scanning libraries, and routing libraries for navigation.
+  -Stylesheets for Swiper and QR code scanning components are imported for styling purposes.
+
+  API Integration:
+  -Custom API functions are used to fetch stall and visitor data from the backend.
+  -Data retrieved from APIs is processed and rendered within the components.
+  -Conclusion
+  -The provided components offer a comprehensive interface for event visitors to explore stalls, search for specific vendors, and interact with QR codes for additional information. By leveraging React's component-based architecture and hooks, the code provides a dynamic and responsive user experience.
+
+
+--------------Home page End--------------------
+
+
+
+
+--------------- Loading Components start ----------------
+
+Overview:
+ The provided component, Loading, is responsible for rendering a loading animation while content is being fetched or processed. It utilizes React and external dependencies such as react-loading for animation and a custom logo image for branding purposes.
+
+ Functionality:
+
+  Loading Animation:
+  -The component displays a loading animation to indicate that content is being loaded.
+  -It utilizes the react-loading library to render the animation, with a specified type and color.
+
+  Branding:
+  -A mini logo image is included in the loading animation to provide branding and visual appeal.
+  -The logo image is sourced from a local asset directory and displayed using an <img> element.
+
+  Overlay:
+  -An overlay is displayed behind the loading animation to partially obscure the underlying content.
+  -This overlay enhances the visual focus on the loading animation and prevents user interaction with the content during loading.
+
+ Styling:
+
+  Layout:
+  -The loading animation is centered within a container element using flexbox layout techniques.
+  -The container has a maximum width to ensure a consistent size across different viewport sizes.
+
+  Overlay Styling:
+  -The overlay behind the loading animation is styled with a semi-transparent white background to partially obscure the content.
+  -This creates a visually pleasing effect while maintaining visibility of the underlying content.
+
+  Animation:
+  -The loading animation itself utilizes CSS animations or transitions to create visual interest.
+  -Additionally, the logo image may have an animation applied to it to create a pulsating effect, indicating activity.
+
+ Integration:
+
+  Component Composition:
+  -The Loading component can be easily integrated into other parts of the application where loading feedback is required.
+  -It can be rendered conditionally based on loading state variables or as a standalone component during initial data fetching.
+
+  External Dependencies: 
+  -The component relies on the react-loading library for rendering the loading animation.
+  -Additionally, a custom logo image is imported from the local assets directory for branding purposes.
+
+ Conclusion:
+  The Loading component provides a visually appealing and functional loading animation for indicating activity during content loading. By integrating React with external dependencies and custom branding elements, the component enhances the user experience by providing visual feedback and maintaining brand consistency.
+
+------------------ Loading Components End --------------------------
+
+
+
+------------------ PageNotFound Started ---------------------------
+
+Overview:
+ The provided component, Error404, is responsible for rendering a custom 404 error page when a requested URL does not match any routes in the application. It utilizes React and external dependencies such as react-router-dom for routing and fetching the user's username from an API endpoint.
+
+ Functionality:
+
+  Error Handling:
+  -The component detects when a URL does not match any defined routes in the application.
+  -It renders a custom error page with a message indicating that the requested page was not found.
+
+  Redirect:
+  -Users are provided with a link to navigate back to the home page or their profile page, depending on whether a username is available.
+  -The link is conditionally rendered based on the presence of the USER_NAME variable fetched from the USER_NAME API endpoint.
+
+  User Interface:
+  -The error page features a visually appealing layout with a prominent error message and a brief description of the error.
+  -Design elements such as borders, font styles, and spacing are applied to enhance readability and aesthetics.
+
+ Integration:
+
+  Routing:
+   -The Error404 component is integrated into the application's routing system using react-router-dom.
+   -When a URL does not match any defined routes, the routing mechanism automatically renders the Error404 component.
+
+  API Integration:
+   -The component fetches the USER_NAME variable from an external API endpoint to determine whether the user is logged in and has a username.
+   -This information is used to conditionally render a link to the user's profile page or the home page.
+
+ Conclusion:
+  The Error404 component provides a user-friendly and visually appealing way to handle 404 errors in the application. By leveraging React's component-based architecture and external dependencies such as react-router-dom and API endpoints, the component enhances the user experience by providing informative error messages and intuitive navigation options.
+
+
+---------------------------- PageNotFound End ----------------------------
+
+-----------------------------Stall Folder Started-------------------------
+
+ProductorService Component
+
+ Overview
+  The ProductorService component is responsible for displaying detailed information about a specific product or service. It fetches data from an API endpoint based on the provided id parameter and renders the product/service details, including the title, cover image, and description.
+
+ Functionality:
+  Data Fetching: Utilizes the getServiceorproductforEventHandler function to fetch product/service details based on the provided id.
+  Navigation: Provides a functionality to navigate back to the previous page using the useNavigate hook from react-router-dom.
+  UI Rendering: Renders the product/service title, cover image, and description in a visually appealing layout.
+
+ Integration:
+  -Integrated into the application's routing system to render product/service details when the corresponding route is accessed.
+  -Utilizes React's state management to store and update the fetched product/service data.
+
+
+---
+Profile Component:
+
+ Overview:
+  The Profile component serves as a profile page for a specific user or entity. It displays information such as the user's logo, name, description, and a list of services/products offered.
+
+ Functionality:
+  -Print Functionality: Provides a feature to print the profile information using the window.print() method.
+  -Navigation: Offers a link to navigate back to the dashboard using the Link component from react-router-dom.
+  -UI Elements: Displays the user's logo, name, description, and action buttons for adding contacts, viewing the profile, and bookmarking.
+
+ Integration:
+  -Integrated into the application's routing system to render the user's profile page when accessed.
+  -Utilizes React's component-based architecture to compose the profile layout and elements.
+
+ Conclusion:
+  Both components enhance the user experience by providing relevant information in an intuitive and visually appealing manner. They leverage React's features and external dependencies to fetch data, handle navigation, and render dynamic UI components effectively. Integrating these components into the application's routing system ensures seamless navigation and accessibility.
+
+
+-----------------------------Stall Folder Ended---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

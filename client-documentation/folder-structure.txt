@@ -1,0 +1,30 @@
+We Create a Rabto by using create-react-app .
+
+We use a Tailwind css for style .
+ 1. @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    import tailwind in index.css 
+
+
+Folder Structure :
+     Rabto
+        - Public
+           1.  index.html  
+           2.  favicon.ico  
+           3.  manifest.json  
+           4.  robots.txt  
+        - src
+            - APIS
+            - Assets
+            - Components
+            - Config
+            - Fonts
+            - MainComponents
+            - RouteProtection
+            - App.js
+            - index.js
+            - index.css
+            - package.json
+            - tailwind.config.js
+
