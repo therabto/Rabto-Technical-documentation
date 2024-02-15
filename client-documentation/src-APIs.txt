@@ -63,11 +63,13 @@ This module contains various API functions for interacting with the backend.
       - userID: The ID of the user.
    Returns: Data containing user services.
 
+
 10. Function: GetuserProductHandler
     Description: Retrieves products associated with a user.
     Parameters:
        - userID: The ID of the user.
     Returns: Data containing user products.
+
 
 11. Function: CreateEventHandler
     Description: Allows the current user to create an event.
@@ -77,6 +79,7 @@ This module contains various API functions for interacting with the backend.
     Returns: data
     Note: As of 14.05.2024, it is not fully implemented.
 
+
 12. Function: UpdateEventHandler
     Description: Allows the current user to update an event.
     Parameters:
@@ -84,6 +87,7 @@ This module contains various API functions for interacting with the backend.
        - data: Updated data for the event.
     Returns: data
     Note: As of 14.05.2024, it is not fully implemented.
+
 
 13. Function: DeleteEventHandler
     Description: Allows the current user to delete an event.
@@ -93,12 +97,14 @@ This module contains various API functions for interacting with the backend.
     Returns: data
     Note: As of 14.05.2024, it is not fully implemented.
 
+
 14. Function: GetuserEventHandler
     Description: Retrieves events associated with a user.
     Parameters:
        - userID: The ID of the user.
     Returns: Data containing user events.
     Note: As of 14.05.2024, it is not fully implemented.
+
 
 15. Function: CreateStallHandler
     Description: Allows the current user to create a stall.
@@ -107,12 +113,14 @@ This module contains various API functions for interacting with the backend.
        - data: Data for creating the stall.
     Returns: data
 
+
 16. Function: UpdateStallHandler
     Description: Allows the current user to update a stall.
     Parameters:
        - action: The action to be performed.
        - data: Updated data for the stall.
     Returns: data
+
 
 17. Function: DeleteStallHandler
     Description: Allows the current user to delete a stall.
@@ -121,11 +129,13 @@ This module contains various API functions for interacting with the backend.
        - data: Data for deleting the stall.
     Returns: data
 
+
 18. Function: GetuserStallHandler
     Description: Retrieves stalls associated with a user.
     Parameters:
        - id: The ID of the user.
     Returns: Data containing user stalls.
+
 
 19. Function: GetStallBYIDHandler
     Description: Retrieves a stall by its ID.
@@ -133,10 +143,12 @@ This module contains various API functions for interacting with the backend.
        - id: The ID of the stall.
     Returns: Data containing the stall information.
 
+
 20. Function: GetuserServiceOrProductForStallHandler
     Description: Retrieves services or products associated with a stall.
     Parameters: data
     Returns: Data containing services or products for the stall.
+
 
 21. Function: AddaServiceOrProductTOStallHandler
     Description: Allows the current user to add a service or product to a stall.
@@ -145,12 +157,14 @@ This module contains various API functions for interacting with the backend.
        - data: Data for adding the service or product to the stall.
     Returns: data
 
+
 22. Function: RemoveaServiceOrProductTOStallHandler
     Description: Allows the current user to remove a service or product from a stall.
     Parameters:
        - action: The action to be performed.
        - data: Data for removing the service or product from the stall.
     Returns: data
+
 
 23. Function: getStallServiesORProductsHandler
     Description: Retrieves services or products associated with a stall.
@@ -159,16 +173,19 @@ This module contains various API functions for interacting with the backend.
        - data: Data for retrieving services or products for the stall.
     Returns: Data containing services or products for the stall.
 
+
 24. Function: getStallforEventHandler
     Description: Retrieves stalls for an event.
     Parameters: data
     Returns: Data containing stalls for the event.
+
 
 25. Function: getServiceorproductforEventHandler
     Description: Retrieves services or products for an event.
     Parameters:
        - id: The ID of the event.
     Returns: Data containing services or products for the event.
+
 
 26. Function: ScannedVisitorStallCreate
     Description: Adds a visited stall for a particular event when a visitor is scanned.
@@ -178,6 +195,7 @@ This module contains various API functions for interacting with the backend.
     Returns: data
     Note: Purpose is to track recent visits and visited stalls.
 
+
 27. Function: ScannedUserStallCreate
     Description: Adds visitor details for a particular event when a visitor is scanned.
     Parameters:
@@ -186,6 +204,7 @@ This module contains various API functions for interacting with the backend.
     Returns: data
     Note: Purpose is for the stall user dashboard view.
 
+
 28. Function: GetVisitorDetailsForEventsHandler
     Description: Retrieves visitor details for a specific event.
     Parameters:
@@ -193,12 +212,14 @@ This module contains various API functions for interacting with the backend.
        - data: Data for retrieving visitor details.
     Returns: Data containing visitor details for the event.
 
+
 29. Function: BookMarkAStallHandler
     Description: Allows a visitor to bookmark a particular stall for an event.
     Parameters:
        - action: The action to be performed.
        - data: Data for bookmarking the stall.
     Returns: data
+
 
 30. Function: NewServiedeorProduct
     Description: Updates a bookmark for a visitor.
@@ -208,12 +229,14 @@ This module contains various API functions for interacting with the backend.
     Returns: data
     Note: Purpose is to update bookmarks.
 
+
 31. Function: GetDashboardVisitorsForEvents
     Description: Retrieves dashboard data for a particular event, limited to the current user's leads.
     Parameters:
        - action: The action to be performed.
        - data: Data for retrieving dashboard visitors.
     Returns: Data containing dashboard visitors for the event, limited to the current user's leads.
+
 
 32. Function: LeadCreateHandler
     Description: Updates a lead for a visitor.
@@ -222,17 +245,21 @@ This module contains various API functions for interacting with the backend.
        - data: Data for updating the lead.
     Returns: data
 
+
 33. Function: getSubcriptionsHandler
     Description: Retrieves subscription users.
     Parameters:
        - id: The ID of the subscription.
     Returns: Data containing subscription users.
 
+
 34. Function: getUserDetailsForleadsHandler
     Description: Retrieves all leads for a stall user.
+
     Parameters:
        - id: The ID of the stall user.
     Returns: Data containing all leads for the stall user.
+
 
 ---------------- src/apis/APIs.js End ----------------
 

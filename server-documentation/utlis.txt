@@ -1,0 +1,28 @@
+ -utlis
+    -VerifyToken.js
+    -Error.js
+
+----------- VerifyToken.js start  -------------
+
+./utils/AuthMiddleware.js
+
+This middleware provides token verification functionality for user authentication.
+
+1. Function: VerifyToken
+   Description: Verifies the authenticity of the token included in the request.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+      - next: The callback function to pass control to the next middleware.
+   Returns: Calls the `next` function to proceed with the next middleware if the token is valid.
+            Otherwise, it generates an error indicating authentication failure.
+
+----------- VerifyToken.js End    -------------
+
+
+------------ Error.js Start --------------
+
+Error 
+-Not in use
+
+------------ Error.js End   --------------

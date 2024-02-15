@@ -1,0 +1,8 @@
+FOLDER STRUCTURE
+   
+   rabto-server
+      -app.js
+      -routes
+      -Controllers      
+      -utlis
+      -models

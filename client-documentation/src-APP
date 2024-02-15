@@ -1,0 +1,33 @@
+App 
+-The App component serves as the entry point for the application. It handles routing using react-router-dom, lazy-loads components for optimized performance, and provides a fallback loading component while components are being loaded.
+
+Dependencies
+-react: Core library for building user interfaces in React.
+-react-router-dom: Library for declarative routing in React applications.
+-js-cookie: Library for managing cookies in JavaScript.
+
+Components
+-Login: Component responsible for rendering the login page.
+-Dashboard: Component for displaying the user dashboard.
+-StallProfile: Component for displaying stall profiles.
+-ProductService: Component for displaying product or service details.
+-ProfilePage: Main profile page component.
+-DashboardPage: Main dashboard page component.
+-EventInsights: Component for displaying event insights.
+-EditProfile: Component for editing user profiles.
+-EditStall: Component for editing stall profiles.
+-Yuktijewels: Component for displaying Yuktijewels profile.
+-Profile: Component for displaying user profiles.
+-NewStallProfile: Component for displaying new stall profiles.
+-BookMark: Component for displaying bookmarks.
+-VisitorProfile: Component for displaying visitor profiles.
+-ServiceOrProductCreate: Component for creating product or service details.
+-ExportToExcel: Component for exporting data to Excel.
+-Loading: Component for displaying a loading indicator while components are being loaded.
+-Error404: Component for displaying a 404 error page when a route is not found.
+
+Implementation
+-The Suspense component wraps the routes and provides a fallback loading component (<Loading />) while the content is being loaded lazily.
+-The Routes component defines the routing configuration for the application.
+-Each route corresponds to a specific URL path and renders the associated lazy-loaded component.
+-Protected routes are wrapped with the UserRoutes component to ensure authentication before rendering.

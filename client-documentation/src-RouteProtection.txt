@@ -1,0 +1,13 @@
+
+UserRoutes 
+The UserRoutes component is a React functional component designed to manage user authentication and route protection within a React application. It ensures that users are redirected to the home page if they are not authenticated.
+
+Dependencies
+-js-cookie: A library used for handling cookies in JavaScript.
+-react-router-dom: A library used for routing in React applications.
+
+Props
+children: The child components or routes that need to be protected by authentication.
+
+Implementation
+The UserRoutes component checks for the presence of a specific cookie, "mycookie", using the Cookies.get() method from the js-cookie library. If the cookie is not found, indicating that the user is not authenticated, the component redirects the user to the home page ("/") using the <Navigate> component from react-router-dom.

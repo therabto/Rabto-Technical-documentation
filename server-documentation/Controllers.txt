@@ -1,0 +1,446 @@
+Controllers  
+      -Auth.js
+      -Event.js
+      -EventLists.js
+      -ServiceOrProduct.js
+      -Stall.js
+      -Subscription.js
+      -User.js
+      -Visitor.js
+
+
+---------Auth.js Start----------
+User Auth
+
+./controllers/UserController.js 
+
+This controller manages user-related operations.
+
+1. Function: CreateUser
+   EndPoint: /api/auth/createuser
+   Description: Creates a new user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+2. Function: UserAuthentication
+   EndPoint: /api/auth/userauthentication
+   Description: Authenticates a user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating whether the user exists for login or signup.
+
+./model/User
+This model represents the User schema for the database.
+
+
+-----------------Auth End------------------------
+
+
+
+-----------------Event Start------------------------
+
+-User Event Handling functions
+-Like Create ,Edit , delete and get Stall data.
+
+./controllers/EventController.js 
+
+This controller manages event-related operations.
+
+1. Function: CreateEvent
+   EndPoint: /api/event/create-event
+   Description: Creates a new event.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+2. Function: UpdateEvent
+   EndPoint: /api/event/update-event
+   Description: Updates an existing event.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+3. Function: DeleteEvent
+   EndPoint: /api/event/delete-event
+   Description: Deletes an event.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+4. Function: GetEventForUser
+   EndPoint: /api/event/get-event-for-user/:userid
+   Description: Retrieves events for a specific user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing event data for the specified user.
+
+./model/Event
+This model represents the Event schema for the database.
+
+-----------------Event End--------------------------
+
+-----------------EventLists.js Start--------------------
+ 
+This controller handles the retrieval of event lists from the database.
+1. Function: GetEventLists
+   EndPoint: /api/eventlists/get-event-lists
+   Description: Retrieves event lists from the database.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing the retrieved event data.
+
+./model/EventLists
+This model represents the EventLists schema for the database.
+
+-----------------EventLists.js End--------------------
+
+----------------ServiceOrProduct.js Start -----------
+
+ ./controllers/ServiceOrProduct.js 
+
+This controller manages the CRUD operations for services or products.
+
+1. Function: CreateServiceOrProduct
+   EndPoint: /api/serviceorproduct/create-service-or-product
+   Description: Creates a new service or product.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+2. Function: UpdateServiceOrProduct
+   EndPoint: /api/serviceorproduct/update-service-or-product
+   Description: Updates an existing service or product.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+3. Function: DeleteServiceOrProduct
+   EndPoint: /api/serviceorproduct/delete-service-or-product
+   Description: Deletes a service or product.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+4. Function: GetSeriveForUser
+   EndPoint: /api/serviceorproduct/get-service-for-user/:userid
+   Description: Retrieves services associated with a specific user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing user's services.
+
+5. Function: GetProductForUser
+   EndPoint: /api/serviceorproduct/get-product-for-user/:userid
+   Description: Retrieves products associated with a specific user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing user's products.
+
+6. Function: getAllByUserID
+   EndPoint: /api/serviceorproduct/get-serviceorproduct-for-user/:userid
+   Description: Retrieves all services or products associated with a specific user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing all services or products of the user.
+
+7. Function: GetstallProductORservicesbyIDS
+   EndPoint: /api/serviceorproduct/get-stall-serviceorproduct-for-user
+   Description: Retrieves services or products by their IDs.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing services or products based on provided IDs.
+
+8. Function: GetServiceOrProductByID
+   EndPoint: /api/serviceorproduct/service-or-product/:id
+   Description: Retrieves a service or product by its ID.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing the requested service or product.
+
+9. Function: CreateNewServiceOrProduct
+   EndPoint: /api/serviceorproduct/create-new-service-or-product
+   Description: Creates a new service or product (similar to CreateServiceOrProduct but named differently).
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+
+./model/ServiceOrProduct.js
+This model represents the ServiceOrProduct schema for the database.
+
+----------------ServiceOrProduct.js End -------------
+
+----------------stall.js Start -----------------
+
+./controllers/StallController.js
+
+This controller manages the CRUD operations for stalls.
+
+1. Function: CreateStall
+   EndPoint: api/stall/create-stall
+   Description: Creates a new stall.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+2. Function: UpdateStall
+   EndPoint: api/stall/update-stall
+   Description: Updates an existing stall.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+3. Function: DeleteStall
+   EndPoint: api/stall/delete-stall
+   Description: Deletes a stall.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+4. Function: GetStallForUser
+   EndPoint: api/stall/get-stall-for-user/:userid
+   Description: Retrieves stall data associated with a specific user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing user's stall data.
+
+5. Function: GetStallForByID
+   EndPoint: api/stall/get-stall-for-id/:stallid
+   Description: Retrieves stall data by its ID.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing stall data.
+
+6. Function: addServiceOrProductID
+   EndPoint: api/stall/add-a-product-stall
+   Description: Adds a service or product ID to the stall's ServiceOrProductID array.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+7. Function: removeServiceOrProductID
+   EndPoint: api/stall/delete-a-product-stall
+   Description: Removes a service or product ID from the stall's ServiceOrProductID array.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+8. Function: getAllStallsForEvents
+   EndPoint: api/stall/get-all-stall-for-events
+   Description: Retrieves stalls for events.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing stall data for events.
+
+9. Function: getAllStallsForQRpurpose
+   EndPoint: api/stall/get-url-purpose
+   Description: Retrieves stalls for QR code purposes.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing stall data for QR code purposes.
+
+./model/stall.js
+This model represents the stall schema for the database.
+
+----------------stall.js End -----------------
+
+
+---------------stallUser.js Start ------------
+
+.controllers/StallUserController.js
+create stall visitors .
+This controller manages the creation and manipulation of stall users.
+
+1. Function: createStallUser
+   EndPoint: /api/stalluser/create-stall-user
+   Description: Creates or updates a stall user record.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+2. Function: updateLeadRating
+   EndPoint: /api/stalluser/update-lead-rating
+   Description: Updates the lead rating of a stall user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating success or failure of the operation.
+
+3. Function: getdashboardhandler
+   EndPoint: /api/stalluser/get-stall-user-data
+   Description: Retrieves stall user data for a dashboard.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing stall user data for the dashboard.
+
+
+./model/stallUser.js
+This model represents the stallUser schema for the database.
+---------------stalluser.js End-----------
+
+---------------subscription.js Start------------------
+
+/controllers/SubscriptionsController.js
+
+This controller manages the retrieval of subscription data.
+
+1. Function: getSubscriptions
+   EndPoint: /api/subscriptions/get-subcripitons
+   Description: Retrieves subscription user data.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing subscription user data.
+
+
+./model/subscriptions.js
+This model represents the Subscriptions schema for the database.
+
+---------------subscription.js End------------------
+
+---------------User.js Start ---------------------
+
+./controllers/UserController.js
+
+This controller manages user-related operations.
+
+1. Function: UpdateUserProfile
+   EndPoint: /api/user/update-user
+   Description: Updates the user profile information.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+2. Function: deleteUser
+   Description: Deletes a user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+3. Function: getaUser
+   EndPoint: /api/user/get-a-user/:userName
+   Description: Retrieves user data by username.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing the requested user data.
+
+4. Function: getCurrentUser
+   EndPoint: /api/user/get-current-user/:id
+   Description: Retrieves the data of the current user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing the current user's data.
+
+5. Function: backendUpdateUserProfile
+   EndPoint: /api/user/backend-update-user
+   Description: Updates the user profile information from the backend.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+6. Function: getAllUserForQRpurpose
+   EndPoint: /api/user/get-user-qr
+   Description: Retrieves all users for QR code purposes.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing user data for QR code purposes.
+
+7. Function: isUsernameAvailable
+   Description: Checks if a username is available.
+   Parameters:
+      - userName: The username to check.
+      - id: The ID of the user.
+   Returns: Boolean value indicating whether the username is available.
+
+8. Function: updateLeadRating (Commented Out)
+   Description: Updates the lead rating for a user.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+9. Function: getdashboardhandler (Commented Out)
+   Description: Retrieves user data for the dashboard.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing user data for the dashboard.
+
+./model/User.js
+This model represents the User schema for the database.
+---------------User.js End -----------------------
+
+
+-------------- visitor Start ----------------------
+
+.controllers/VisitorController.js 
+
+This controller manages visitor-related operations.
+
+1. Function: createVisitor
+   Endpoint: /api/visitors/create-visitor-user
+   Description: Creates a new visitor or updates an existing one with recent visits and stall bookmarks.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+2. Function: bookmarkVisitor
+   Endpoint: /api/visitors/update-bookmark
+   Description: Adds a stall to a visitor's bookmark list and updates the stall user's bookmark status.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response indicating the success or failure of the operation.
+
+3. Function: GetVisitorDetailsForEvents
+   Endpoint: /api/visitors/get-visitor-details-for-events
+   Description: Retrieves visitor details for events.
+   Parameters:
+      - req: The HTTP request object.
+      - res: The HTTP response object.
+   Returns: JSON response containing the visitor data for the specified event.
+
+4. Function: addToRecentVisits (Helper Function)
+   Description: Adds a visit value to the recent visits array and maintains it with a maximum length of 3.
+   Parameters:
+      - recentVisits: Array containing recent visit values.
+      - visitValue: The value to add to the recent visits array.
+   Returns: Updated array of recent visits.
+
+./model/Visitors.js
+This model represents the Visitors schema for the database.
+--------------- visitor End -----------------------
